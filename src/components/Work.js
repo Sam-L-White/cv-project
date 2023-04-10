@@ -8,7 +8,9 @@ class Work extends Component{
             fields: {
                 inputCompany: "Company Name",
                 inputPositionTitle: "Position Title",
-                inputTasks: "Tasks"
+                inputTasks: "Tasks",
+                inputDateFrom: "Date From",
+                inputDateTo: "Date To"
             }
         }
     }
@@ -20,7 +22,9 @@ class Work extends Component{
                     fields: {
                         inputCompany: e.target.value,
                         inputPositionTitle: this.state.fields.inputPositionTitle,
-                        inputTasks: this.state.fields.inputTasks
+                        inputTasks: this.state.fields.inputTasks,
+                        inputDateFrom: this.state.fields.inputDateFrom,
+                        inputDateTo: this.state.fields.inputDateTo
                     }
                 })
                 break;
@@ -30,7 +34,9 @@ class Work extends Component{
                     fields: {
                         inputCompany: this.state.fields.inputCompany,
                         inputPositionTitle: e.target.value,
-                        inputTasks: this.state.fields.inputTasks
+                        inputTasks: this.state.fields.inputTasks,
+                        inputDateFrom: this.state.fields.inputDateFrom,
+                        inputDateTo: this.state.fields.inputDateTo
                     }
                 })
                 break;
@@ -40,7 +46,33 @@ class Work extends Component{
                     fields: {
                         inputCompany: this.state.fields.inputCompany,
                         inputPositionTitle: this.state.fields.inputPositionTitle,
-                        inputTasks: e.target.value
+                        inputTasks: e.target.value,
+                        inputDateFrom: this.state.fields.inputDateFrom,
+                        inputDateTo: this.state.fields.inputDateTo
+                    }
+                })
+                break;
+
+            case "inputDateFrom":
+                this.setState({
+                    fields: {
+                        inputCompany: this.state.fields.inputCompany,
+                        inputPositionTitle: this.state.fields.inputPositionTitle,
+                        inputTasks: this.state.fields.inputTasks,
+                        inputDateFrom: e.target.value,
+                        inputDateTo: this.state.fields.inputDateTo
+                    }
+                })
+                break;
+            
+            case "inputDateTo":
+                this.setState({
+                    fields: {
+                        inputCompany: this.state.fields.inputCompany,
+                        inputPositionTitle: this.state.fields.inputPositionTitle,
+                        inputTasks: this.state.fields.inputTasks,
+                        inputDateFrom: this.state.fields.inputDateFrom,
+                        inputDateTo: e.target.value
                     }
                 })
                 break;
@@ -76,6 +108,22 @@ class Work extends Component{
                         id="inputTasks"
                         onChange={this.handleChange}
                         value={this.state.fields.inputTasks}
+                    />
+                    <label htmlFor="inputDateFrom">Date From</label>
+                    <input 
+                        type="date" 
+                        name="inputDateFrom" 
+                        id="inputDateFrom"
+                        onChange={this.handleChange}
+                        value={this.state.fields.inputDateFrom}
+                    />
+                    <label htmlFor="inputDateTo">Date To</label>
+                    <input 
+                        type="date" 
+                        name="inputDateTo" 
+                        id="inputDateTo"
+                        onChange={this.handleChange}
+                        value={this.state.fields.inputDateTo}
                     />
                 </form>
             </div>
