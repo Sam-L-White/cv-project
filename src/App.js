@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { About } from "./components/About";
 
 class App extends Component {
     constructor(){
@@ -7,7 +8,14 @@ class App extends Component {
 
     render(){
         return(
-            <div></div>
+            <div className="container">
+                <div className="inputContainer">
+                    <About />
+                </div>
+                <div className="previewContainer">
+
+                </div>
+            </div>
         )
     }
 }
