@@ -9,77 +9,24 @@ class Work extends Component{
                 inputCompany: "Company Name",
                 inputPositionTitle: "Position Title",
                 inputTasks: "Tasks",
-                inputDateFrom: "Date From",
-                inputDateTo: "Date To"
+                inputDateFrom: new Date().toISOString().split('T')[0],
+                inputDateTo: new Date().toISOString().split('T')[0]
             }
         }
     }
 
     handleChange = (e) => {
-        switch(e.target.id){
-            case "inputCompany":
-                this.setState({
-                    fields: {
-                        inputCompany: e.target.value,
-                        inputPositionTitle: this.state.fields.inputPositionTitle,
-                        inputTasks: this.state.fields.inputTasks,
-                        inputDateFrom: this.state.fields.inputDateFrom,
-                        inputDateTo: this.state.fields.inputDateTo
-                    }
-                })
-                break;
+        const {name, value} = e.target
 
-            case "inputPositionTitle":
-                this.setState({
-                    fields: {
-                        inputCompany: this.state.fields.inputCompany,
-                        inputPositionTitle: e.target.value,
-                        inputTasks: this.state.fields.inputTasks,
-                        inputDateFrom: this.state.fields.inputDateFrom,
-                        inputDateTo: this.state.fields.inputDateTo
-                    }
-                })
-                break;
-
-            case "inputTasks":
-                this.setState({
-                    fields: {
-                        inputCompany: this.state.fields.inputCompany,
-                        inputPositionTitle: this.state.fields.inputPositionTitle,
-                        inputTasks: e.target.value,
-                        inputDateFrom: this.state.fields.inputDateFrom,
-                        inputDateTo: this.state.fields.inputDateTo
-                    }
-                })
-                break;
-
-            case "inputDateFrom":
-                this.setState({
-                    fields: {
-                        inputCompany: this.state.fields.inputCompany,
-                        inputPositionTitle: this.state.fields.inputPositionTitle,
-                        inputTasks: this.state.fields.inputTasks,
-                        inputDateFrom: e.target.value,
-                        inputDateTo: this.state.fields.inputDateTo
-                    }
-                })
-                break;
+        this.setState({
+            fields: {
+                ...this.state,
+                [name]: value
+            }
             
-            case "inputDateTo":
-                this.setState({
-                    fields: {
-                        inputCompany: this.state.fields.inputCompany,
-                        inputPositionTitle: this.state.fields.inputPositionTitle,
-                        inputTasks: this.state.fields.inputTasks,
-                        inputDateFrom: this.state.fields.inputDateFrom,
-                        inputDateTo: e.target.value
-                    }
-                })
-                break;
+        });
+    };
 
-            default:
-        }
-    }
 
     render(){
         return(

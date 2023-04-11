@@ -14,40 +14,16 @@ class About extends Component{
     }
 
     handleChange = (e) => {
-        switch(e.target.id){
-            case "inputName":
-                this.setState({
-                    fields: {
-                        inputName: e.target.value,
-                        inputEmail: this.state.fields.inputEmail,
-                        inputTelephone: this.state.fields.inputTelephone
-                    }
-                })
-                break;
+        const {name, value} = e.target
 
-            case "inputEmail":
-                this.setState({
-                    fields: {
-                        inputName: this.state.fields.inputName,
-                        inputEmail: e.target.value,
-                        inputTelephone: this.state.fields.inputTelephone
-                    }
-                })
-                break;
-
-            case "inputTelephone":
-                this.setState({
-                    fields: {
-                        inputName: this.state.fields.inputName,
-                        inputEmail: this.state.fields.inputEmail,
-                        inputTelephone: e.target.value
-                    }
-                })
-                break;
-
-            default:
-        }
-    }
+        this.setState({
+            fields: {
+                ...this.state,
+                [name]: value
+            }
+            
+        });
+    };
 
     render(){
         return(

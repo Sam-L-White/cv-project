@@ -14,40 +14,16 @@ class Education extends Component{
     }
 
     handleChange = (e) => {
-        switch(e.target.id){
-            case "inputSchoolName":
-                this.setState({
-                    fields: {
-                        inputSchoolName: e.target.value,
-                        inputTitle: this.state.fields.inputTitle,
-                        inputDate: this.state.fields.inputDate
-                    }
-                })
-                break;
+        const {name, value} = e.target
 
-            case "inputTitle":
-                this.setState({
-                    fields: {
-                        inputSchoolName: this.state.fields.inputSchoolName,
-                        inputTitle: e.target.value,
-                        inputDate: this.state.fields.inputDate
-                    }
-                })
-                break;
-
-            case "inputDate":
-                this.setState({
-                    fields: {
-                        inputSchoolName: this.state.fields.inputSchoolName,
-                        inputTitle: this.state.fields.inputTitle,
-                        inputDate: e.target.value
-                    }
-                })
-                break;
-
-            default:
-        }
-    }
+        this.setState({
+            fields: {
+                ...this.state,
+                [name]: value
+            }
+            
+        });
+    };
 
     render(){
         return(
