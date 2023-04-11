@@ -1,13 +1,18 @@
 import React, {Component} from "react";
 
 class Preview extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+
+        const {name} = props
     }
+    
 
     render(){
         return(
-            <div>TEST</div>
+            <div>
+                <h1>{this.props.name}</h1>
+            </div>
         )
     }
 }

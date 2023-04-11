@@ -4,29 +4,7 @@ class Work extends Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            fields: {
-                inputCompany: "Company Name",
-                inputPositionTitle: "Position Title",
-                inputTasks: "Tasks",
-                inputDateFrom: new Date().toISOString().split('T')[0],
-                inputDateTo: new Date().toISOString().split('T')[0]
-            }
-        }
     }
-
-    handleChange = (e) => {
-        const {name, value} = e.target
-
-        this.setState({
-            fields: {
-                ...this.state,
-                [name]: value
-            }
-            
-        });
-    };
-
 
     render(){
         return(
@@ -36,36 +14,36 @@ class Work extends Component{
                         type="text" 
                         name="inputCompany" 
                         id="inputCompany"
-                        onChange={this.handleChange}
-                        value={this.state.fields.inputCompany}
+                        onChange={this.props.handleChange}
+                        value={this.props.inputCompany}
                     />
                     <input 
                         type="text" 
                         name="inputPositionTitle" 
                         id="inputPositionTitle"
-                        onChange={this.handleChange}
-                        value={this.state.fields.inputPositionTitle}
+                        onChange={this.props.handleChange}
+                        value={this.props.inputPositionTitle}
                     />
                     <input 
                         type="text" 
                         name="inputTasks" 
                         id="inputTasks"
-                        onChange={this.handleChange}
-                        value={this.state.fields.inputTasks}
+                        onChange={this.props.handleChange}
+                        value={this.props.inputTasks}
                     />
                     <input 
                         type="date" 
                         name="inputDateFrom" 
                         id="inputDateFrom"
-                        onChange={this.handleChange}
-                        value={this.state.fields.inputDateFrom}
+                        onChange={this.props.handleChange}
+                        value={this.props.inputDateFrom}
                     />
                     <input 
                         type="date" 
                         name="inputDateTo" 
                         id="inputDateTo"
-                        onChange={this.handleChange}
-                        value={this.state.fields.inputDateTo}
+                        onChange={this.props.handleChange}
+                        value={this.props.inputDateTo}
                     />
                 </form>
             </div>

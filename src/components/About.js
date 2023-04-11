@@ -4,26 +4,7 @@ class About extends Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            fields: {
-                inputName: "Name",
-                inputEmail: "Email",
-                inputTelephone: "Telephone"
-            }
-        }
     }
-
-    handleChange = (e) => {
-        const {name, value} = e.target
-
-        this.setState({
-            fields: {
-                ...this.state,
-                [name]: value
-            }
-            
-        });
-    };
 
     render(){
         return(
@@ -33,22 +14,22 @@ class About extends Component{
                         type="text" 
                         name="inputName" 
                         id="inputName"
-                        onChange={this.handleChange}
-                        value={this.state.fields.inputName}
+                        onChange={this.props.handleChange}
+                        value={this.props.inputName}
                     />
                     <input 
                         type="text" 
                         name="inputEmail" 
                         id="inputEmail"
-                        onChange={this.handleChange}
-                        value={this.state.fields.inputEmail}
+                        onChange={this.props.handleChange}
+                        value={this.props.inputEmail}
                     />
                     <input 
                         type="text" 
                         name="inputTelephone" 
                         id="inputTelephone"
-                        onChange={this.handleChange}
-                        value={this.state.fields.inputTelephone}
+                        onChange={this.props.handleChange}
+                        value={this.props.inputTelephone}
                     />
                 </form>
             </div>
