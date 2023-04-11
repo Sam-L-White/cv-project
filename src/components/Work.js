@@ -32,7 +32,6 @@ class Work extends Component{
         return(
             <div>
                 <form>
-                    <label htmlFor="inputCompany">Company Name</label>
                     <input
                         type="text" 
                         name="inputCompany" 
@@ -40,7 +39,6 @@ class Work extends Component{
                         onChange={this.handleChange}
                         value={this.state.fields.inputCompany}
                     />
-                    <label htmlFor="inputPositionTitle">PositionTitle</label>
                     <input 
                         type="text" 
                         name="inputPositionTitle" 
@@ -48,7 +46,6 @@ class Work extends Component{
                         onChange={this.handleChange}
                         value={this.state.fields.inputPositionTitle}
                     />
-                    <label htmlFor="inputTasks">Tasks</label>
                     <input 
                         type="text" 
                         name="inputTasks" 
@@ -56,7 +53,6 @@ class Work extends Component{
                         onChange={this.handleChange}
                         value={this.state.fields.inputTasks}
                     />
-                    <label htmlFor="inputDateFrom">Date From</label>
                     <input 
                         type="date" 
                         name="inputDateFrom" 
@@ -64,7 +60,6 @@ class Work extends Component{
                         onChange={this.handleChange}
                         value={this.state.fields.inputDateFrom}
                     />
-                    <label htmlFor="inputDateTo">Date To</label>
                     <input 
                         type="date" 
                         name="inputDateTo" 

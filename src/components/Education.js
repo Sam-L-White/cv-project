@@ -29,7 +29,6 @@ class Education extends Component{
         return(
             <div>
                 <form>
-                    <label htmlFor="inputSchoolName">School Name</label>
                     <input
                         type="text" 
                         name="inputSchoolName" 
@@ -37,7 +36,6 @@ class Education extends Component{
                         onChange={this.handleChange}
                         value={this.state.fields.inputSchoolName}
                     />
-                    <label htmlFor="inputTitle">Title</label>
                     <input 
                         type="text" 
                         name="inputTitle" 
@@ -45,7 +43,6 @@ class Education extends Component{
                         onChange={this.handleChange}
                         value={this.state.fields.inputTitle}
                     />
-                    <label htmlFor="inputDate">Date</label>
                     <input 
                         type="text" 
                         name="inputDate" 

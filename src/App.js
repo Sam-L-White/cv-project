@@ -3,6 +3,7 @@ import { About } from "./components/About";
 import { Education } from "./components/Education";
 import { Preview } from "./components/Preview";
 import { Work } from "./components/Work"
+import "./styles/App.css"
 
 class App extends Component {
     constructor(){

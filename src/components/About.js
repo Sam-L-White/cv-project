@@ -28,8 +28,7 @@ class About extends Component{
     render(){
         return(
             <div>
-                <form>
-                    <label htmlFor="inputName">Name</label>
+                <form className="form">
                     <input
                         type="text" 
                         name="inputName" 
@@ -37,7 +36,6 @@ class About extends Component{
                         onChange={this.handleChange}
                         value={this.state.fields.inputName}
                     />
-                    <label htmlFor="inputEmail">Email</label>
                     <input 
                         type="text" 
                         name="inputEmail" 
@@ -45,7 +43,6 @@ class About extends Component{
                         onChange={this.handleChange}
                         value={this.state.fields.inputEmail}
                     />
-                    <label htmlFor="inputTelephone">Telephone</label>
                     <input 
                         type="text" 
                         name="inputTelephone" 
