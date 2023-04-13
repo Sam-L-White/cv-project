@@ -15,14 +15,18 @@
     justify-content: center;
     border: 3px solid black;
     padding: 30px;
+    height: max-content;
+
 }
 
 .previewContainer{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     border: 3px solid black;
     padding: 30px;
+    height: max-content;
 }
 
 form{
