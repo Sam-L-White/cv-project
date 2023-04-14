@@ -139,6 +139,11 @@ class App extends Component {
                 </div>
                 <div className="previewContainer">
                     <Preview
+                        inputName={this.state.aboutFields.inputName}
+                        inputEmail={this.state.aboutFields.inputEmail}
+                        inputTelephone={this.state.aboutFields.inputTelephone}
+                        educationForms={this.state.educationForms}
+                        workForms={this.state.workForms}
                     />
                 </div>
             </div>

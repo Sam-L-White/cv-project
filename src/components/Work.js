@@ -7,43 +7,44 @@ class Work extends Component{
     }
 
     render(){
+        const {keyProp, handleChange, inputCompany, inputPositionTitle, inputTasks, inputDateFrom, inputDateTo} = this.props
         return(
             <div>
                 <form>
                     <input
                         type="text" 
                         name="inputCompany" 
-                        id={this.props.keyProp}
-                        onChange={this.props.handleChange}
-                        value={this.props.inputCompany}
+                        id={keyProp}
+                        onChange={handleChange}
+                        value={inputCompany}
                     />
                     <input 
                         type="text" 
                         name="inputPositionTitle" 
-                        id={this.props.keyProp}
-                        onChange={this.props.handleChange}
-                        value={this.props.inputPositionTitle}
+                        id={keyProp}
+                        onChange={handleChange}
+                        value={inputPositionTitle}
                     />
                     <input 
                         type="text" 
                         name="inputTasks" 
-                        id={this.props.keyProp}
-                        onChange={this.props.handleChange}
-                        value={this.props.inputTasks}
+                        id={keyProp}
+                        onChange={handleChange}
+                        value={inputTasks}
                     />
                     <input 
                         type="date" 
                         name="inputDateFrom" 
-                        id={this.props.keyProp}
-                        onChange={this.props.handleChange}
-                        value={this.props.inputDateFrom}
+                        id={keyProp}
+                        onChange={handleChange}
+                        value={inputDateFrom}
                     />
                     <input 
                         type="date" 
                         name="inputDateTo" 
-                        id={this.props.keyProp}
-                        onChange={this.props.handleChange}
-                        value={this.props.inputDateTo}
+                        id={keyProp}
+                        onChange={handleChange}
+                        value={inputDateTo}
                     />
                 </form>
             </div>

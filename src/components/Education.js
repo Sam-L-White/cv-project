@@ -7,29 +7,30 @@ class Education extends Component{
     }
 
     render(){
+        const {keyProp, handleChange, inputSchoolName, inputTitle, inputDate} = this.props
         return(
             <div>
                 <form>
                     <input
                         type="text" 
                         name="inputSchoolName" 
-                        id={this.props.keyProp}
-                        onChange={this.props.handleChange}
-                        value={this.props.inputSchoolName}
+                        id={keyProp}
+                        onChange={handleChange}
+                        value={inputSchoolName}
                     />
                     <input 
                         type="text" 
                         name="inputTitle" 
-                        id={this.props.keyProp}
-                        onChange={this.props.handleChange}
-                        value={this.props.inputTitle}
+                        id={keyProp}
+                        onChange={handleChange}
+                        value={inputTitle}
                     />
                     <input 
                         type="text" 
                         name="inputDate" 
-                        id={this.props.keyProp}
-                        onChange={this.props.handleChange}
-                        value={this.props.inputDate}
+                        id={keyProp}
+                        onChange={handleChange}
+                        value={inputDate}
                     />
                 </form>
             </div>
