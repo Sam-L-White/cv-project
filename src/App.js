@@ -17,22 +17,24 @@ class App extends Component {
                 inputTelephone: "Telephone",
                 id: uniqid()
             },
-            educationFields: {
-                inputSchoolName: "School Name",
-                inputTitle: "Title of Study",
-                inputDate: "Date",
-                id: uniqid()
-            },
-            workFields: {
-                inputCompany: "Company Name",
-                inputPositionTitle: "Position Title",
-                inputTasks: "Tasks",
-                inputDateFrom: new Date().toISOString().split('T')[0],
-                inputDateTo: new Date().toISOString().split('T')[0],
-                id: uniqid()
-            },
-            educationForms: [],
-            workForms: []
+            educationForms: [
+                {
+                    inputSchoolName: "School Name",
+                    inputTitle: "Title of Study",
+                    inputDate: "Date",
+                    id: uniqid()
+                }
+            ],
+            workForms: [
+                {
+                    inputCompany: "Company Name",
+                    inputPositionTitle: "Position Title",
+                    inputTasks: "Tasks",
+                    inputDateFrom: new Date().toISOString().split('T')[0],
+                    inputDateTo: new Date().toISOString().split('T')[0],
+                    id: uniqid()
+                }
+            ]
         }
     }
 
@@ -51,32 +53,52 @@ class App extends Component {
 
     handleEducationChange = (e) => {
 
-        const {name, value} = e.target
+        const {name, value, id} = e.target
 
         this.setState(prevState => ({
-            educationFields: {
-                ...prevState.educationFields,
-                [name]: value
-
-            }
+            educationForms: prevState.educationForms.map(form => (form.id === id) ? {...form, [name]: value} : form)
         }));
     };
 
     handleWorkChange = (e) => {
 
-        const {name, value} = e.target
+        const {name, value, id} = e.target
 
         this.setState(prevState => ({
-            workFields: {
-                ...prevState.workFields,
-                [name]: value
-
-            }
+            workForms: prevState.workForms.map(form => (form.id === id) ? {...form, [name]: value} : form)
         }));
     };
 
     addEducationForm = () => {
-        
+
+        const educationFields = {
+            inputSchoolName: "School Name",
+            inputTitle: "Title of Study",
+            inputDate: "Date",
+            id: uniqid()
+        }
+  
+        this.setState({
+            educationForms: this.state.educationForms.concat(educationFields)
+        })
+
+    }
+
+    addWorkForm = () => {
+
+        const workFields = {
+            inputCompany: "Company Name",
+            inputPositionTitle: "Position Title",
+            inputTasks: "Tasks",
+            inputDateFrom: new Date().toISOString().split('T')[0],
+            inputDateTo: new Date().toISOString().split('T')[0],
+            id: uniqid()
+        }
+  
+        this.setState({
+            workForms: this.state.workForms.concat(workFields)
+        })
+
     }
 
 
@@ -90,34 +112,33 @@ class App extends Component {
                         inputTelephone={this.state.aboutFields.inputTelephone}
                         handleChange={this.handleAboutChange}
                     />
-                    <Education
-                        inputSchoolName={this.state.educationFields.inputSchoolName}
-                        inputTitle={this.state.educationFields.inputTitle}
-                        inputDate={this.state.educationFields.inputDate}
+                    {this.state.educationForms.map((educationForm, i) => {
+                        return  <Education
+                        key={educationForm.id}
+                        keyProp={educationForm.id}
+                        inputSchoolName={educationForm.inputSchoolName}
+                        inputTitle={educationForm.inputTitle}
+                        inputDate={educationForm.inputDate}
                         handleChange={this.handleEducationChange}
                     />
-                    <Work
-                        inputCompany={this.state.workFields.inputCompany}
-                        inputPositionTitle={this.state.workFields.inputPositionTitle}
-                        inputTasks={this.state.workFields.inputTasks}
-                        inputDateFrom={this.state.workFields.inputDateFrom}
-                        inputDateTo={this.state.workFields.inputDateTo}
+                    })}
+                    <button onClick={this.addEducationForm}> + </button>
+                    {this.state.workForms.map((workForm, i) => {
+                        return  <Work
+                        key={workForm.id}
+                        keyProp={workForm.id}
+                        inputCompany={workForm.inputCompany}
+                        inputPositionTitle={workForm.inputPositionTitle}
+                        inputTasks={workForm.inputTasks}
+                        inputDateFrom={workForm.inputDateFrom}
+                        inputDateTo={workForm.inputDateTo}
                         handleChange={this.handleWorkChange}
                     />
+                    })}
+                    <button onClick={this.addWorkForm}> + </button>
                 </div>
                 <div className="previewContainer">
                     <Preview
-                        inputName={this.state.aboutFields.inputName}
-                        inputEmail={this.state.aboutFields.inputEmail}
-                        inputTelephone={this.state.aboutFields.inputTelephone}
-                        inputSchoolName={this.state.educationFields.inputSchoolName}
-                        inputTitle={this.state.educationFields.inputTitle}
-                        inputDate={this.state.educationFields.inputDate}
-                        inputCompany={this.state.workFields.inputCompany}
-                        inputPositionTitle={this.state.workFields.inputPositionTitle}
-                        inputTasks={this.state.workFields.inputTasks}
-                        inputDateFrom={this.state.workFields.inputDateFrom}
-                        inputDateTo={this.state.workFields.inputDateTo}
                     />
                 </div>
             </div>

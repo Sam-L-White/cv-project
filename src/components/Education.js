@@ -13,21 +13,21 @@ class Education extends Component{
                     <input
                         type="text" 
                         name="inputSchoolName" 
-                        id="inputSchoolName"
+                        id={this.props.keyProp}
                         onChange={this.props.handleChange}
                         value={this.props.inputSchoolName}
                     />
                     <input 
                         type="text" 
                         name="inputTitle" 
-                        id="inputTitle"
+                        id={this.props.keyProp}
                         onChange={this.props.handleChange}
                         value={this.props.inputTitle}
                     />
                     <input 
                         type="text" 
                         name="inputDate" 
-                        id="inputDate"
+                        id={this.props.keyProp}
                         onChange={this.props.handleChange}
                         value={this.props.inputDate}
                     />

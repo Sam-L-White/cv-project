@@ -13,35 +13,35 @@ class Work extends Component{
                     <input
                         type="text" 
                         name="inputCompany" 
-                        id="inputCompany"
+                        id={this.props.keyProp}
                         onChange={this.props.handleChange}
                         value={this.props.inputCompany}
                     />
                     <input 
                         type="text" 
                         name="inputPositionTitle" 
-                        id="inputPositionTitle"
+                        id={this.props.keyProp}
                         onChange={this.props.handleChange}
                         value={this.props.inputPositionTitle}
                     />
                     <input 
                         type="text" 
                         name="inputTasks" 
-                        id="inputTasks"
+                        id={this.props.keyProp}
                         onChange={this.props.handleChange}
                         value={this.props.inputTasks}
                     />
                     <input 
                         type="date" 
                         name="inputDateFrom" 
-                        id="inputDateFrom"
+                        id={this.props.keyProp}
                         onChange={this.props.handleChange}
                         value={this.props.inputDateFrom}
                     />
                     <input 
                         type="date" 
                         name="inputDateTo" 
-                        id="inputDateTo"
+                        id={this.props.keyProp}
                         onChange={this.props.handleChange}
                         value={this.props.inputDateTo}
                     />
