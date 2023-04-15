@@ -3,8 +3,8 @@ import { About } from "./components/About";
 import { Education } from "./components/Education";
 import { Preview } from "./components/Preview";
 import { Work } from "./components/Work"
-import "./styles/App.css"
 import uniqid from "uniqid";
+import "./index.css"
 
 class App extends Component {
     constructor(){
@@ -103,41 +103,51 @@ class App extends Component {
 
 
     render(){
+        const {inputName, inputEmail, inputTelephone} = this.state.aboutFields
         return(
-            <div className="container">
-                <div className="inputContainer">
-                    <About 
-                        inputName={this.state.aboutFields.inputName}
-                        inputEmail={this.state.aboutFields.inputEmail}
-                        inputTelephone={this.state.aboutFields.inputTelephone}
-                        handleChange={this.handleAboutChange}
-                    />
-                    {this.state.educationForms.map((educationForm, i) => {
-                        return  <Education
-                        key={educationForm.id}
-                        keyProp={educationForm.id}
-                        inputSchoolName={educationForm.inputSchoolName}
-                        inputTitle={educationForm.inputTitle}
-                        inputDate={educationForm.inputDate}
-                        handleChange={this.handleEducationChange}
-                    />
-                    })}
-                    <button onClick={this.addEducationForm}> + </button>
-                    {this.state.workForms.map((workForm, i) => {
-                        return  <Work
-                        key={workForm.id}
-                        keyProp={workForm.id}
-                        inputCompany={workForm.inputCompany}
-                        inputPositionTitle={workForm.inputPositionTitle}
-                        inputTasks={workForm.inputTasks}
-                        inputDateFrom={workForm.inputDateFrom}
-                        inputDateTo={workForm.inputDateTo}
-                        handleChange={this.handleWorkChange}
-                    />
-                    })}
-                    <button onClick={this.addWorkForm}> + </button>
+            <div className="grid justify-center h-screen grid-cols-[35vw_35vw] grid-rows-[10%_80%_10%] gap-[30px]">
+                <div className="flex flex-col col-[1_/_2] row-[2_/_3] justify-center p-[30px] border-[3px] border-solid border-[black] gap-10 h-max">
+                    <div className="">
+                        <div className="text-xl">About</div>
+                        <About
+                            inputName={inputName}
+                            inputEmail={inputEmail}
+                            inputTelephone={inputTelephone}
+                            handleChange={this.handleAboutChange}
+                        />
+                    </div>
+                    <div className="flex flex-col">
+                        <div className="text-xl">Education</div>
+                        {this.state.educationForms.map((educationForm, i) => {
+                            return  <Education
+                            key={educationForm.id}
+                            keyProp={educationForm.id}
+                            inputSchoolName={educationForm.inputSchoolName}
+                            inputTitle={educationForm.inputTitle}
+                            inputDate={educationForm.inputDate}
+                            handleChange={this.handleEducationChange}
+                        />
+                        })}
+                        <button className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded self-center w-24" onClick={this.addEducationForm}> + </button>
+                    </div>
+                    <div className="flex flex-col">
+                        <div className="text-xl">Work Experience</div>
+                        {this.state.workForms.map((workForm, i) => {
+                            return  <Work
+                            key={workForm.id}
+                            keyProp={workForm.id}
+                            inputCompany={workForm.inputCompany}
+                            inputPositionTitle={workForm.inputPositionTitle}
+                            inputTasks={workForm.inputTasks}
+                            inputDateFrom={workForm.inputDateFrom}
+                            inputDateTo={workForm.inputDateTo}
+                            handleChange={this.handleWorkChange}
+                        />
+                        })}
+                        <button className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded self-center w-24" onClick={this.addWorkForm}> + </button>
+                    </div>
                 </div>
-                <div className="previewContainer">
+                <div className="flex flex-col col-[2_/_3] row-[2_/_3] h-max p-[30px] border-[3px] border-solid border-[black]">
                     <Preview
                         inputName={this.state.aboutFields.inputName}
                         inputEmail={this.state.aboutFields.inputEmail}
